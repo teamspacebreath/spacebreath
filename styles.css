@@ -95,6 +95,7 @@ a:hover { text-decoration: underline; }
   border-radius: var(--radius);
   margin-top: 18px;
   box-shadow: 0 6px 18px rgba(81, 151, 247, 0.15);
+  text-align: center; 
 }
 .contact-item { margin: 12px 0; }
 .contact-item strong { color: var(--brand); }
