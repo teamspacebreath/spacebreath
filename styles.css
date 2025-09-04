@@ -89,6 +89,17 @@ a { color: var(--brand); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* ===== Contact Panel ===== */
+/* Contact section centered */
+#contact {
+  text-align: center;
+}
+
+.contact-info {
+  text-align: center;    /* Inhalt in der Box mittig */
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .contact-info {
   background: var(--panel);
   padding: 22px;
