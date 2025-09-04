@@ -1,217 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SpaceBreath</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f8ff;
-    }
-    
-    header {
-      width: 100%;
-    }
-    
-    .banner {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-    }
-    
-    main {
-      padding: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    h1 {
-      color: #000000;
-      margin-top: 20px;
-    }
-    
-    h2 {
-      color: #2c5aa0;
-      margin-top: 40px;
-      margin-bottom: 20px;
-    }
-    
-    p {
-      font-size: 18px;
-      color: #333;
-      line-height: 1.6;
-    }
-    
-    .section {
-      margin-bottom: 50px;
-      text-align: left;
-    }
-    
-    .section h2 {
-      text-align: center;
-    }
-    
-    .contact-info {
-      background-color: #e6f3ff;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-    
-    .contact-item {
-      margin: 15px 0;
-    }
-    
-    .contact-item strong {
-      color: #2c5aa0;
-    }
-    
-    a {
-      color: #2c5aa0;
-      text-decoration: none;
-    }
-    
-    a:hover {
-      text-decoration: underline;
-    }
-    
-/* Professional Horizontal Navigation Bar */
-.nav-bar {
-  background: linear-gradient(135deg, #2c5aa0 0%, #1e3f73 100%);
-  box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);
-  padding: 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.nav-bar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  gap: 0;
-}
-
-.nav-bar li {
-  margin: 0;
-}
-
-.nav-bar a {
-  display: block;
-  padding: 18px 35px;
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.nav-bar a:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-  color: #e6f3ff;
-}
-
-.nav-bar li:last-child a {
-  border-right: none;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .nav-bar a {
-    padding: 15px 20px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-bar ul {
-    flex-direction: column;
-  }
-  
-  .nav-bar a {
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .nav-bar li:last-child a {
-    border-bottom: none;
-  }
-}
-    
-    /* Smooth scrolling */
-    html {
-      scroll-behavior: smooth;
-    }
-    /* YouTube icon styling */
-.youtube-icon {
-  font-size: 18px;
-  margin-right: 8px;
-  vertical-align: middle;
-}
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Banner Image -->
+  <!-- Banner -->
   <header>
-    <img src="banner.jpg" alt="Space Breath Banner" class="banner">
+    <img src="banner.jpg" alt="SpaceBreath banner showing calm, open space" class="banner" />
   </header>
-  
-  <!-- Navigation Bar -->
-<nav class="nav-bar">
-  <ul>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-  
+
+  <!-- Navigation -->
+  <nav class="nav-bar" role="navigation" aria-label="Primary">
+    <ul>
+      <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <main>
-    <!-- Welcome Message -->
-    <section id="welcome">
+    <!-- Welcome -->
+    <section id="welcome" class="section">
       <h1>Welcome to SpaceBreath!</h1>
       <p>Your journey into self-discovery starts here.</p>
     </section>
 
-    <!-- About Us Section -->
+    <!-- About teaser -->
     <section id="about" class="section">
       <h2>About Us</h2>
       <p>
-        At SpaceBreath, we believe that breathing is more than just a biological function—it's a gateway to inner peace, clarity, and transformation. Our mission is to guide you through the powerful practice of breathwork, helping you discover the profound connection between breath and well-being.
+        At SpaceBreath, we believe that breathing is more than just a biological function—it's a
+        gateway to inner peace, clarity, and transformation. Our mission is to guide you through
+        the powerful practice of breathwork, helping you discover the profound connection between
+        breath and well-being.
       </p>
       <p>
-        Through our carefully crafted guided breathwork sessions, we create a safe space for you to explore mindfulness, reduce stress, and unlock your inner potential. Whether you're new to breathwork or looking to deepen your practice, our sessions are designed to meet you where you are on your journey.
-      </p>
-      <p>
-        Join our community and experience the transformative power of conscious breathing. Every breath is an opportunity to reconnect with yourself and find peace in the present moment.
+        Through our carefully crafted guided breathwork sessions, we create a safe space for you to
+        explore mindfulness, reduce stress, and unlock your inner potential.
       </p>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="section">
       <h2>Contact</h2>
-      <p>We'd love to connect with you! Whether you have questions about our breathwork sessions, want to collaborate, or are interested in business opportunities, we're here to help.</p>
-      
+      <p>We'd love to connect with you—questions, collaborations, or business inquiries.</p>
+
       <div class="contact-info">
         <div class="contact-item">
-          <strong>E-Mail</strong><br>
+          <strong>E-Mail</strong><br />
           <span>teamspacebreath@gmail.com</span>
         </div>
-        
+
         <div class="contact-item">
-  <strong>YouTube Channel</strong><br>
-  <a href="https://www.youtube.com/@Space-Breath" target="_blank">
-    <span class="youtube-icon">▶️</span> SpaceBreath YouTube Channel
-  </a>
-</div>
+          <strong>YouTube Channel</strong><br />
+          <a href="https://www.youtube.com/@Space-Breath" target="_blank" rel="noopener">
+            <span class="youtube-icon">▶️</span> SpaceBreath YouTube Channel
+          </a>
+        </div>
+      </div>
     </section>
   </main>
+
+  <footer>
+    <p>&copy; 2025 SpaceBreath. All rights reserved.</p>
+  </footer>
 </body>
 </html>
