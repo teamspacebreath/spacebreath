@@ -123,6 +123,24 @@ footer {
 }
 
 /* ===== Reduced Motion ===== */
+/* ===== Hero / Welcome Section ===== */
+#welcome {
+  min-height: 60vh;              /* covers ~60% of screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;       /* vertical centering */
+  align-items: center;           /* horizontal centering */
+  text-align: center;
+  margin: 0 auto;
+}
+#welcome h1 {
+  margin-bottom: 12px;
+}
+#welcome p {
+  font-size: 20px;
+  color: #444;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .nav-bar a { transition: none; }
