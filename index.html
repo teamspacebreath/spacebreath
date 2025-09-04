@@ -78,13 +78,14 @@
       text-decoration: underline;
     }
     
-   /* Navigation Bar - now horizontal under banner */
+/* Professional Horizontal Navigation Bar */
 .nav-bar {
-  background-color: rgba(255, 255, 255, 0.95);
-  border-bottom: 2px solid #2c5aa0;
-  padding: 15px 0;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #2c5aa0 0%, #1e3f73 100%);
+  box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-bar ul {
@@ -93,7 +94,7 @@
   margin: 0;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 0;
 }
 
 .nav-bar li {
@@ -101,18 +102,49 @@
 }
 
 .nav-bar a {
-  display: inline-block;
-  padding: 10px 20px;
-  color: #2c5aa0;
+  display: block;
+  padding: 18px 35px;
+  color: white;
   text-decoration: none;
-  border-radius: 5px;
   font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-bar a:hover {
-  background-color: #e6f3ff;
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  color: #e6f3ff;
+}
+
+.nav-bar li:last-child a {
+  border-right: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .nav-bar a {
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-bar ul {
+    flex-direction: column;
+  }
+  
+  .nav-bar a {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-bar li:last-child a {
+    border-bottom: none;
+  }
 }
     
     /* Smooth scrolling */
