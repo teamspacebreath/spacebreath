@@ -61,6 +61,14 @@ header { width: 100%; }
 .nav-bar a.active,
 [aria-current="page"] { background: rgba(255,255,255,.25); }
 
+/* Optional: YouTube icon in nav */
+.nav-icon {
+  height: 24px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
 /* ===== Layout ===== */
 main {
   max-width: 900px;
@@ -76,11 +84,9 @@ h1, h2 { line-height: 1.2; margin: 0 0 16px; text-align: center; }
 h1 { font-size: clamp(28px, 3.2vw, 40px); color: #000; margin-top: 20px; }
 h2 { font-size: clamp(22px, 2.4vw, 28px); color: var(--brand); margin-top: 36px; }
 p { font-size: 18px; line-height: 1.7; margin: 20px 0; }
-/* Only affect About Us heading on about.html */
-.about-page #about h2 {
-  text-align: left;
-}
 
+/* Only affect About Us heading on about.html */
+.about-page #about h2 { text-align: left; }
 
 /* Welcome text centered */
 #welcome p {
@@ -94,16 +100,7 @@ a { color: var(--brand); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* ===== Contact Panel ===== */
-/* Contact section centered */
-#contact {
-  text-align: center;
-}
-
-.contact-info {
-  text-align: center;    /* Inhalt in der Box mittig */
-  margin-left: auto;
-  margin-right: auto;
-}
+#contact { text-align: center; }
 
 .contact-info {
   background: var(--panel);
@@ -111,12 +108,14 @@ a:hover { text-decoration: underline; }
   border-radius: var(--radius);
   margin-top: 18px;
   box-shadow: 0 6px 18px rgba(81, 151, 247, 0.15);
-  text-align: center; 
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .contact-item { margin: 12px 0; }
 .contact-item strong { color: var(--brand); }
 
-/* YouTube icon */
+/* YouTube icon (in contact section text) */
 .youtube-icon {
   font-size: 18px;
   margin-right: 8px;
@@ -151,7 +150,9 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .nav-bar a { transition: none; }
- /* ===== Two-column feature boxes ===== */
+}  /* <-- diese Klammer schließt den Media-Query korrekt! */
+
+/* ===== Two-column feature boxes ===== */
 .feature-duo {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -159,14 +160,12 @@ footer {
   margin: 40px 0;
   align-items: stretch;
 }
-
 .card {
   padding: 32px;
   border-radius: var(--radius);
   box-shadow: 0 6px 18px rgba(81, 151, 247, 0.12);
   background: #fff;
 }
-
 .card--blue { background: var(--panel); }   /* hellblau */
 .card--white { background: #ffffff; }
 
@@ -176,7 +175,6 @@ footer {
   color: var(--brand);
   text-align: left;
 }
-
 .card p {
   margin: 0;
   line-height: 1.7;
@@ -185,15 +183,5 @@ footer {
 
 /* Mobile: Spalten untereinander */
 @media (max-width: 768px) {
-  .feature-duo {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Nav-Icon Größe (falls noch nicht vorhanden) */
-.nav-icon {
-  height: 24px;
-  width: auto;
-  display: block;
-  object-fit: contain;
+  .feature-duo { grid-template-columns: 1fr; }
 }
