@@ -151,26 +151,28 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .nav-bar a { transition: none; }
-  /* ===== Split Section ===== */
+ /* ===== Split Section (Two Columns) ===== */
 .split-section {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* nebeneinander */
   margin: 40px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 .split {
-  flex: 1 1 50%;
+  flex: 1; /* beide gleich breit */
   padding: 40px 30px;
   font-size: 18px;
   line-height: 1.6;
 }
 
 .split.left {
-  background-color: #ffffff; /* heller Bereich */
+  background-color: #ffffff; /* weiß */
 }
 
 .split.right {
-  background-color: #f0f8ff; /* etwas abgesetzter Bereich */
+  background-color: #f0f8ff; /* leicht blau */
 }
 
 .split h2 {
@@ -179,8 +181,9 @@ footer {
   text-align: left;
 }
 
+/* Mobile: Spalten untereinander */
 @media (max-width: 768px) {
-  .split {
-    flex: 1 1 100%;
+  .split-section {
+    flex-direction: column;
   }
 }
