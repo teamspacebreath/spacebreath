@@ -2,7 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
 
 /*
-Website made by SpaceBreath
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
 html, body, div, span, applet, object,
@@ -1281,14 +1283,9 @@ input, select, textarea {
 				display: none;
 			}
 
-		
 
-		.logo {
-		  display: flex;
-		  align-items: center;
-		  justify-content: center;
-		  overflow: hidden;   /* ensures logo doesn’t stick out */
-		}
+
+
 
 		.logo img {
 		  width: 100%;         /* adjust percentage to fit nicely */
@@ -1717,4 +1714,3 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
-
