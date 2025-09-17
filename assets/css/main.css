@@ -1281,13 +1281,7 @@ input, select, textarea {
 				display: none;
 			}
 
-		 /*circle -  #header .logo {
-			width: 7.5rem;
-			height: 7.5rem;
-			line-height: 7.5rem;
-			border: solid 1px #ffffff;
-			border-radius: 100%;*/
-		}
+		
 
 		.logo {
 		  display: flex;
@@ -1723,3 +1717,4 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
