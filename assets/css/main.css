@@ -72,6 +72,12 @@ input, select, textarea {
 	appearance: none;
 }
 
+/* Circle Rule */
+* {
+    border-radius: 0 !important; /* removes round corners/circles */
+    background-image: none !important; /* removes radial gradients */
+}
+
 /* Basic */
 
 	@-ms-viewport {
@@ -1714,4 +1720,5 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
 
