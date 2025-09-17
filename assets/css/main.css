@@ -1328,7 +1328,7 @@ input, select, textarea {
 			/* Make the image scale with container */
 			#header .logo img {
 			    max-width: 100%;       /* fills container width */
-			    max-height: 35vh;     /* increase max-height */
+			    max-height: 45vh;     /* increase max-height */
 			    height: auto;
 			    display: block;
 			}
