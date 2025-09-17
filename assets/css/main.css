@@ -2,9 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
 
 /*
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Website made by SpaceBreath
 */
 
 html, body, div, span, applet, object,
@@ -1268,7 +1266,7 @@ input, select, textarea {
 			-ms-transition: opacity 0.325s ease-in-out;
 			transition: opacity 0.325s ease-in-out;
 			position: relative;
-			margin-top: 3.5rem;
+			margin-top: 2.5rem;
 		}
 
 		#header > *:before {
@@ -1283,13 +1281,13 @@ input, select, textarea {
 				display: none;
 			}
 
-		/* circle -  #header .logo {
+		 /*circle -  #header .logo {
 			width: 7.5rem;
 			height: 7.5rem;
 			line-height: 7.5rem;
 			border: solid 1px #ffffff;
-			border-radius: 100%;
-		} */
+			border-radius: 100%;*/
+		}
 
 		.logo {
 		  display: flex;
@@ -1307,6 +1305,47 @@ input, select, textarea {
 			#header .logo .icon:before {
 				font-size: 4rem;
 			}
+
+			/* Logo container */
+			#header .logo {
+			    width: 150px;          /* max width for logo */
+			    height: auto;          /* maintain aspect ratio */
+			    margin-bottom: 0.1rem;   /* space between logo and header */
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    overflow: hidden;      /* prevents overflow if image is too big */
+			}
+
+			/* Logo image */
+			#header .logo img {
+			    max-width: 100%;       /* scale down to container width */
+			    max-height: 150px;     /* ensure it never exceeds viewport */
+			    height: auto;
+			    display: block;
+			}
+			/* Increase the logo container */
+			#header .logo {
+			    width: 45vh;          /* bigger width */
+			    height: auto;
+			    margin-bottom: 0.5rem;
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			}
+
+			/* Make the image scale with container */
+			#header .logo img {
+			    max-width: 100%;       /* fills container width */
+			    max-height: 35vh;     /* increase max-height */
+			    height: auto;
+			    display: block;
+			}
+			#header {
+			    max-height: 100vh;  /* never taller than the screen */
+			    overflow: hidden;
+			}
+
 
 		#header .content {
 			border-style: solid;
@@ -1434,6 +1473,25 @@ input, select, textarea {
 			}
 
 		}
+
+		@media screen and (max-width: 736px) {
+		    #header .logo {
+		        width: 120px;
+		    }
+		    #header .logo img {
+		        max-height: 120px;
+		    }
+		}
+
+		@media screen and (max-width: 736px) {
+		    #header .logo {
+		        width: 200px;
+		    }
+		    #header .logo img {
+		        max-height: 200px;
+		    }
+		}
+
 
 		@media screen and (max-width: 736px) {
 
@@ -1665,4 +1723,3 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
-
