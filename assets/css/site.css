@@ -262,7 +262,7 @@ h1 em, h2 em { color: var(--mist); font-family: Georgia, "Times New Roman", seri
 .round-map-card header { display: grid; grid-template-columns: auto 1fr; gap: .2rem 1rem; align-items: baseline; margin-bottom: 2rem; }
 .round-map-card header > span { grid-row: 1 / 3; color: var(--yellow); font-size: 3.2rem; font-weight: 700; line-height: .9; letter-spacing: -.06em; }
 .round-map-card h3 { margin: 0; font-size: 1.7rem; }
-.round-map-card header strong { color: var(--mist); text-transform: uppercase; letter-spacing: .12em; font-size: .65rem; }
+.round-map-card header strong { color: var(--mist); letter-spacing: .12em; font-size: .65rem; }
 .round-map-card ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-dark); }
 .round-map-card li { padding: 1rem 0; border-bottom: 1px solid var(--line-dark); }
 .round-map-card b, .round-map-card li span { display: block; }
