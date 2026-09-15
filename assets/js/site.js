@@ -6,17 +6,26 @@ const setHeaderState = () => header.classList.toggle('scrolled', window.scrollY 
 const closeMenu = () => {
   menu.classList.remove('open');
   menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.querySelector('.sr-only').textContent = 'Open menu';
   document.body.classList.remove('menu-open');
 };
 
 menuButton.addEventListener('click', () => {
   const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
   menuButton.setAttribute('aria-expanded', String(!isOpen));
+  menuButton.querySelector('.sr-only').textContent = isOpen ? 'Open menu' : 'Close menu';
   menu.classList.toggle('open', !isOpen);
   document.body.classList.toggle('menu-open', !isOpen);
 });
 
 menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeMenu();
+});
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 900) closeMenu();
+});
+window.addEventListener('pageshow', closeMenu);
 window.addEventListener('scroll', setHeaderState, { passive: true });
 setHeaderState();
 
