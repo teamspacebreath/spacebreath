@@ -193,12 +193,12 @@ h1 em, h2 em { color: var(--mist); font-family: Georgia, "Times New Roman", seri
 /* Journal article */
 .blog-page { background: var(--paper); color: var(--ink); }
 .blog-page .site-header { background: rgba(7,19,18,.94); }
-.article-hero { min-height: 86svh; display: flex; align-items: flex-end; padding: 11rem max(1.25rem, calc((100vw - 980px) / 2)) 5rem; background: linear-gradient(90deg, rgba(7,19,18,.96), rgba(7,19,18,.58)), url("../../images/bg.jpg") center / cover; color: var(--paper); }
-.article-heading { max-width: 900px; }
+.article-hero { min-height: 86svh; display: flex; align-items: flex-end; padding: 11rem max(1.25rem, calc((100vw - var(--max)) / 2)) 5rem; background: linear-gradient(90deg, rgba(7,19,18,.96), rgba(7,19,18,.58)), url("../../images/bg.jpg") center / cover; color: var(--paper); }
+.article-heading { width: 100%; max-width: var(--max); }
 .article-cover { width: min(1180px,calc(100% - 2.5rem)); margin: -3rem auto 0; position: relative; z-index: 2; }
 .article-cover img { width: 100%; border-radius: var(--radius); box-shadow: 0 28px 80px rgba(7,19,18,.24); }
-.article-heading h1 { font-size: clamp(3.7rem,9vw,8.5rem); }
-.article-deck { max-width: 720px; color: rgba(255,255,255,.72); font-size: clamp(1.1rem,2vw,1.45rem); }
+.article-heading h1 { max-width: 1200px; font-size: clamp(3.7rem,7.4vw,7.2rem); text-wrap: balance; }
+.article-deck { max-width: 900px; color: rgba(255,255,255,.72); font-size: clamp(1.1rem,2vw,1.45rem); }
 .article-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 2.5rem; color: var(--mist); text-transform: uppercase; letter-spacing: .13em; font-size: .67rem; }
 .back-link { display: inline-block; margin-bottom: 3rem; color: var(--mist); text-decoration: none; font-size: .78rem; }
 .article-body { width: min(760px,calc(100% - 2.5rem)); margin: 0 auto; padding: clamp(5rem,9vw,9rem) 0; }
@@ -219,7 +219,6 @@ h1 em, h2 em { color: var(--mist); font-family: Georgia, "Times New Roman", seri
 .feedback-gallery figure { margin: 0; padding: 1rem; border-radius: 1.25rem; background: #111918; box-shadow: 0 20px 60px rgba(7,19,18,.14); }
 .feedback-gallery img { width: 100%; border-radius: .7rem; }
 .feedback-gallery figcaption { padding: .9rem .2rem .15rem; color: rgba(255,255,255,.62); font-size: .75rem; }
-.article-body .work-in-progress { margin: 3rem 0; padding: 1.4rem 1.5rem; border: 1px solid var(--line-light); border-radius: 1rem; background: rgba(255,255,255,.42); font-family: Inter, Arial, sans-serif; font-size: .9rem; line-height: 1.6; }
 .article-cta { width: min(1040px,calc(100vw - 2.5rem)); margin: 7rem 0 0 50%; transform: translateX(-50%); padding: clamp(3rem,7vw,6rem); border-radius: var(--radius); background: var(--ink); color: var(--paper); }
 .article-cta h2 { margin: 0 0 1.4rem; color: var(--paper); }
 .article-cta p:not(.eyebrow) { max-width: 620px; color: rgba(255,255,255,.7); }
