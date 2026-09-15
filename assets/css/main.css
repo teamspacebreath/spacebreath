@@ -1233,7 +1233,8 @@ input, select, textarea {
 
 		}
 
-		/* ===============================
+		
+/* ===============================
    Header Section
    =============================== */
 
@@ -1495,6 +1496,7 @@ body.is-preload #header .content .inner {
         font-size: 2.5rem;
     }
 }
+
 
 
 /* Main */
