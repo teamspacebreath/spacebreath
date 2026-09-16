@@ -248,6 +248,18 @@ h1 em, h2 em { color: var(--mist); font-family: Georgia, "Times New Roman", seri
 .session-at-a-glance > p { max-width: 860px; margin: .15rem 0 0; color: rgba(7,19,18,.7); font-size: clamp(1rem,1.45vw,1.18rem); line-height: 1.75; }
 .session-at-a-glance > div:last-child p { max-width: 860px; margin: .15rem 0 1rem; color: rgba(7,19,18,.7); font-size: clamp(1rem,1.45vw,1.18rem); line-height: 1.75; }
 .session-at-a-glance > div:last-child p:last-child { margin-bottom: 0; }
+.session-audience, .session-answers { padding: clamp(4.5rem,7vw,6.5rem) max(1.25rem,calc((100vw - var(--max))/2)); }
+.session-audience { background: #f2eee4; }
+.session-audience-heading, .session-answers-heading { display: grid; grid-template-columns: .7fr 1.3fr; gap: 3rem; align-items: end; margin-bottom: 2.5rem; }
+.session-audience-heading h2, .session-answers-heading h2 { margin: 0; font-size: clamp(2.6rem,5vw,4.8rem); letter-spacing: -.052em; }
+.session-audience-heading > p:last-child, .session-answers-heading > p:last-child { max-width: 620px; margin: 0; color: rgba(7,19,18,.64); }
+.session-audience-grid, .session-answers-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; }
+.session-audience-card, .session-answer-card { padding: clamp(1.4rem,2.5vw,2rem); border: 1px solid var(--line-light); border-radius: 1rem; background: rgba(255,253,247,.7); }
+.session-audience-card small { display: block; margin-bottom: 1.5rem; color: #7f6900; text-transform: uppercase; letter-spacing: .14em; font-size: .64rem; font-weight: 750; }
+.session-audience-card h3, .session-answer-card h3 { margin: 0 0 .75rem; font-size: clamp(1.25rem,2vw,1.65rem); letter-spacing: -.025em; }
+.session-audience-card p, .session-answer-card p { margin: 0; color: rgba(7,19,18,.66); font-size: .9rem; line-height: 1.7; }
+.session-answers { background: var(--paper); }
+.session-answer-card { border-top: 3px solid var(--yellow); }
 .session-player-section, .session-map-section, .session-content-grid, .music-story, .session-credits, .transcript-section, .next-session-cta { padding: clamp(5rem,9vw,8rem) max(1.25rem,calc((100vw - var(--max))/2)); }
 .session-player-section { background: #dce6e1; }
 .session-player-heading { display: grid; grid-template-columns: 1.3fr .7fr; gap: 3rem; align-items: end; margin-bottom: 2.5rem; }
@@ -368,10 +380,11 @@ h1 em, h2 em { color: var(--mist); font-family: Georgia, "Times New Roman", seri
   .sessions-hero-mark { justify-self: start; width: 180px; text-align: left; }
   .library-heading { grid-template-columns: 1fr; align-items: start; }
   .sessions-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .session-detail-hero, .session-at-a-glance, .session-player-heading, .session-map-heading, .session-content-grid, .session-credits-heading, .transcript-intro, .next-session-cta { grid-template-columns: 1fr; }
+  .session-detail-hero, .session-at-a-glance, .session-audience-heading, .session-answers-heading, .session-player-heading, .session-map-heading, .session-content-grid, .session-credits-heading, .transcript-intro, .next-session-cta { grid-template-columns: 1fr; }
   .session-detail-hero { min-height: auto; padding-top: 10rem; }
   .session-facts { max-width: 620px; }
   .round-map, .round-map-two { grid-template-columns: 1fr; }
+  .session-audience-grid, .session-answers-grid { grid-template-columns: 1fr; }
   .music-facts, .time-signatures { grid-template-columns: 1fr; }
   .music-facts div, .music-facts div + div { padding: 1.2rem 0; border-right: 0; border-bottom: 1px solid var(--line-light); }
   .music-facts div:last-child { border-bottom: 0; }
