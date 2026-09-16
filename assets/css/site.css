@@ -242,6 +242,12 @@ h1 em, h2 em { color: var(--mist); font-family: Georgia, "Times New Roman", seri
 .session-facts div { display: grid; grid-template-columns: .8fr 1.2fr; gap: 1rem; padding: 1.15rem 0; border-bottom: 1px solid var(--line-dark); }
 .session-facts dt { color: var(--mist); text-transform: uppercase; letter-spacing: .14em; font-size: .66rem; }
 .session-facts dd { margin: 0; font-size: .92rem; font-weight: 650; }
+.session-at-a-glance { display: grid; grid-template-columns: minmax(220px,.55fr) minmax(0,1.45fr); gap: clamp(2rem,7vw,7rem); align-items: start; padding: clamp(3rem,5vw,4.5rem) max(1.25rem,calc((100vw - var(--max))/2)); border-bottom: 1px solid var(--line-light); background: var(--paper); }
+.session-at-a-glance .eyebrow { margin-bottom: .55rem; color: #7f6900; }
+.session-at-a-glance h2 { margin: 0; font-size: clamp(2rem,3.5vw,3.4rem); letter-spacing: -.045em; }
+.session-at-a-glance > p { max-width: 860px; margin: .15rem 0 0; color: rgba(7,19,18,.7); font-size: clamp(1rem,1.45vw,1.18rem); line-height: 1.75; }
+.session-at-a-glance > div:last-child p { max-width: 860px; margin: .15rem 0 1rem; color: rgba(7,19,18,.7); font-size: clamp(1rem,1.45vw,1.18rem); line-height: 1.75; }
+.session-at-a-glance > div:last-child p:last-child { margin-bottom: 0; }
 .session-player-section, .session-map-section, .session-content-grid, .music-story, .session-credits, .transcript-section, .next-session-cta { padding: clamp(5rem,9vw,8rem) max(1.25rem,calc((100vw - var(--max))/2)); }
 .session-player-section { background: #dce6e1; }
 .session-player-heading { display: grid; grid-template-columns: 1.3fr .7fr; gap: 3rem; align-items: end; margin-bottom: 2.5rem; }
@@ -362,7 +368,7 @@ h1 em, h2 em { color: var(--mist); font-family: Georgia, "Times New Roman", seri
   .sessions-hero-mark { justify-self: start; width: 180px; text-align: left; }
   .library-heading { grid-template-columns: 1fr; align-items: start; }
   .sessions-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .session-detail-hero, .session-player-heading, .session-map-heading, .session-content-grid, .session-credits-heading, .transcript-intro, .next-session-cta { grid-template-columns: 1fr; }
+  .session-detail-hero, .session-at-a-glance, .session-player-heading, .session-map-heading, .session-content-grid, .session-credits-heading, .transcript-intro, .next-session-cta { grid-template-columns: 1fr; }
   .session-detail-hero { min-height: auto; padding-top: 10rem; }
   .session-facts { max-width: 620px; }
   .round-map, .round-map-two { grid-template-columns: 1fr; }
