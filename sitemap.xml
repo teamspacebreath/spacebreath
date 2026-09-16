@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.space-breath.com/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-16</lastmod>
   </url>
   <url>
     <loc>https://www.space-breath.com/sessions/</loc>
@@ -30,6 +30,18 @@
   </url>
   <url>
     <loc>https://www.space-breath.com/authors/harry/</loc>
+    <lastmod>2026-09-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.space-breath.com/authors/jonas/</loc>
+    <lastmod>2026-09-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.space-breath.com/authors/sylvia/</loc>
+    <lastmod>2026-09-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.space-breath.com/authors/erich/</loc>
     <lastmod>2026-09-16</lastmod>
   </url>
 </urlset>
