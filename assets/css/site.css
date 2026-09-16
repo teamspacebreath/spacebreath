@@ -258,6 +258,7 @@ h1 em, h2 em { color: var(--mist); font-family: Georgia, "Times New Roman", seri
 .session-map-heading { display: grid; grid-template-columns: 1.15fr .85fr; gap: 3rem; align-items: end; margin-bottom: 3.5rem; }
 .session-map-heading > p:last-child { max-width: 480px; margin: 0 0 .5rem; color: rgba(255,255,255,.64); }
 .round-map { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; }
+.round-map-two { grid-template-columns: repeat(2,minmax(0,1fr)); max-width: 1000px; margin-inline: auto; }
 .round-map-card { padding: clamp(1.4rem,3vw,2.2rem); border: 1px solid var(--line-dark); border-radius: 1.2rem; background: linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015)); }
 .round-map-card header { display: grid; grid-template-columns: auto 1fr; gap: .2rem 1rem; align-items: baseline; margin-bottom: 2rem; }
 .round-map-card header > span { grid-row: 1 / 3; color: var(--yellow); font-size: 3.2rem; font-weight: 700; line-height: .9; letter-spacing: -.06em; }
@@ -308,6 +309,15 @@ h1 em, h2 em { color: var(--mist); font-family: Georgia, "Times New Roman", seri
 .related-story small { margin-bottom: .5rem; color: var(--yellow); text-transform: uppercase; letter-spacing: .15em; font-size: .65rem; }
 .related-story strong { font-size: clamp(1.2rem,2.5vw,2rem); }
 .related-story > span:last-child { color: var(--mist); font-size: .8rem; font-weight: 700; }
+.related-practices { padding: clamp(5rem,9vw,8rem) max(1.25rem,calc((100vw - var(--max))/2)); background: #dce6e1; }
+.related-practices-heading { max-width: 850px; margin-bottom: 2.5rem; }
+.related-practices-heading h2 { margin: 0; font-size: clamp(2.8rem,5.5vw,5.5rem); letter-spacing: -.055em; }
+.related-practices-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+.related-practice-card { display: flex; flex-direction: column; min-height: 230px; padding: clamp(1.5rem,3vw,2.5rem); border-radius: 1rem; background: var(--ink); color: var(--paper); text-decoration: none; transition: transform .2s ease, background .2s ease; }
+.related-practice-card:hover, .related-practice-card:focus-visible { transform: translateY(-3px); background: #102522; }
+.related-practice-card small { color: var(--yellow); text-transform: uppercase; letter-spacing: .15em; font-size: .65rem; }
+.related-practice-card strong { margin: auto 0 .45rem; font-size: clamp(1.5rem,3vw,2.4rem); }
+.related-practice-card span { color: var(--mist); font-size: .82rem; }
 .transcript-section { background: #dce6e1; }
 .transcript-intro { display: grid; grid-template-columns: 1.2fr .8fr; gap: 3rem; align-items: end; margin-bottom: 2.5rem; }
 .transcript-intro > p:last-child { margin: 0; color: rgba(7,19,18,.62); }
@@ -355,11 +365,12 @@ h1 em, h2 em { color: var(--mist); font-family: Georgia, "Times New Roman", seri
   .session-detail-hero, .session-player-heading, .session-map-heading, .session-content-grid, .session-credits-heading, .transcript-intro, .next-session-cta { grid-template-columns: 1fr; }
   .session-detail-hero { min-height: auto; padding-top: 10rem; }
   .session-facts { max-width: 620px; }
-  .round-map { grid-template-columns: 1fr; }
+  .round-map, .round-map-two { grid-template-columns: 1fr; }
   .music-facts, .time-signatures { grid-template-columns: 1fr; }
   .music-facts div, .music-facts div + div { padding: 1.2rem 0; border-right: 0; border-bottom: 1px solid var(--line-light); }
   .music-facts div:last-child { border-bottom: 0; }
   .credits-list { grid-template-columns: repeat(2,1fr); }
+  .related-practices-grid { grid-template-columns: 1fr; }
 }
 
 .button > span[aria-hidden="true"],
