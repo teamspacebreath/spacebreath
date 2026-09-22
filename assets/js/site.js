@@ -106,55 +106,55 @@ const atlasLink = document.querySelector('[data-atlas-link]');
 const atlasCountries = {
   all: {
     region: 'Our evolving atlas',
-    number: '17',
+    number: '15',
     title: 'Landscapes shaped by the breath',
     copy: 'From Patagonia to Pù Luông, each setting brings its own pace and presence to the practice.',
     link: 'Explore every location'
   },
   spain: {
-    region: 'Spain · 4 landscapes',
+    region: 'Spain · 3 locations',
     number: '5',
     title: 'Atlantic edges and island light',
     copy: 'Sessions made in Camposancos, Mallorca, Galicia and La Guardia, including Spanish-language guidance and creative-flow practices.',
     link: 'View Spain locations'
   },
   germany: {
-    region: 'Germany · 3 landscapes',
+    region: 'Germany · 2 locations',
     number: '11',
     title: 'Home ground and open horizons',
     copy: 'Hamburg, the Elbe River and the fields around Jork became recurring spaces for calm, clarity and active breathing.',
     link: 'View Germany locations'
   },
   england: {
-    region: 'England · 1 landscape',
+    region: 'England · 1 location',
     number: '4',
     title: 'Beginnings beside the south coast',
     copy: 'Eastbourne holds some of the earliest SpaceBreath practices in English and German.',
     link: 'View England location'
   },
   argentina: {
-    region: 'Argentina · 2 landscapes',
+    region: 'Argentina · 2 locations',
     number: '3',
     title: 'Patagonian space and stillness',
     copy: 'El Bolsón and the wider Patagonian landscape shaped both quiet evening breathing and active morning energy.',
     link: 'View Argentina locations'
   },
   thailand: {
-    region: 'Thailand · 2 landscapes',
+    region: 'Thailand · 2 locations',
     number: '3',
     title: 'Warmth, colour and island rhythm',
     copy: 'Ko Pha Ngan and Koh Lanta became settings for happiness, activation and grounding.',
     link: 'View Thailand locations'
   },
   vietnam: {
-    region: 'Vietnam · 3 landscapes',
+    region: 'Vietnam · 3 locations',
     number: '4',
     title: 'Valleys, ritual and everyday life',
     copy: 'Hữu Lũng, Pù Luông and Hội An frame deep journeys, calming sessions and a morning ritual.',
     link: 'View Vietnam locations'
   },
   indonesia: {
-    region: 'Indonesia · 2 landscapes',
+    region: 'Indonesia · 2 locations',
     number: '2',
     title: 'Island practices in balance and flow',
     copy: 'Gili Air and Lombok bring tropical openness to box breathing and rhythmic energy work.',
@@ -210,3 +210,35 @@ if (atlasLink) {
     if (selectedMarker) selectLocation(selectedMarker.dataset.mapCountry, true);
   });
 }
+
+document.querySelectorAll('[data-location-carousel]').forEach((carousel) => {
+  const slides = [...carousel.querySelectorAll('[data-location-slide]')];
+  const currentLabel = carousel.querySelector('[data-carousel-current]');
+  const previousButton = carousel.querySelector('[data-carousel-prev]');
+  const nextButton = carousel.querySelector('[data-carousel-next]');
+  let currentIndex = 0;
+  let touchStartX = 0;
+
+  const showSlide = (nextIndex) => {
+    currentIndex = (nextIndex + slides.length) % slides.length;
+    slides.forEach((slide, index) => {
+      slide.hidden = index !== currentIndex;
+      slide.setAttribute('aria-hidden', String(index !== currentIndex));
+    });
+    if (currentLabel) currentLabel.textContent = String(currentIndex + 1);
+  };
+
+  previousButton?.addEventListener('click', () => showSlide(currentIndex - 1));
+  nextButton?.addEventListener('click', () => showSlide(currentIndex + 1));
+
+  carousel.addEventListener('touchstart', (event) => {
+    touchStartX = event.changedTouches[0].clientX;
+  }, { passive: true });
+  carousel.addEventListener('touchend', (event) => {
+    const distance = event.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(distance) < 45) return;
+    showSlide(currentIndex + (distance < 0 ? 1 : -1));
+  }, { passive: true });
+
+  showSlide(0);
+});
