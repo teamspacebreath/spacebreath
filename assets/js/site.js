@@ -50,6 +50,12 @@ const sessionFilters = document.querySelectorAll('[data-session-filter]');
 const sessionCards = document.querySelectorAll('[data-session-card]');
 const noSessionResults = document.querySelector('[data-no-session-results]');
 
+if (sessionCards.length) {
+  document.querySelectorAll('[data-session-count]').forEach((element) => {
+    element.textContent = String(sessionCards.length);
+  });
+}
+
 sessionFilters.forEach((button) => {
   button.addEventListener('click', () => {
     const selectedFilter = button.dataset.sessionFilter;
