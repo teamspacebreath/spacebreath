@@ -202,6 +202,11 @@ locationFilters.forEach((button) => {
 
 mapMarkers.forEach((marker) => {
   marker.addEventListener('click', () => selectLocation(marker.dataset.mapCountry));
+  marker.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    selectLocation(marker.dataset.mapCountry);
+  });
 });
 
 if (atlasLink) {
