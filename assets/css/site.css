@@ -465,8 +465,10 @@ h1 em, h2 em { color: var(--mist); font-family: Georgia, "Times New Roman", seri
 .world-map { position: relative; display: grid; place-items: center; min-height: 0; padding: 2rem; border-right: 1px solid var(--line-dark); background: radial-gradient(circle at 70% 40%,rgba(244,201,0,.05),transparent 32%),linear-gradient(150deg,#0c2926,#071816); overflow: hidden; }
 .world-map svg { display: block; width: 100%; height: auto; }
 .map-grid path { fill: none; stroke: rgba(255,255,255,.045); stroke-width: 1; }
-.map-land path { fill: #b7c8c2; opacity: .22; stroke: rgba(244,241,232,.28); stroke-width: 1.5; }
+.map-land .map-country { fill: #b7c8c2; fill-opacity: .18; stroke: rgba(230,241,235,.43); stroke-width: .72; stroke-linejoin: round; }
+.map-land .map-country-featured { fill: #e0c567; fill-opacity: .26; stroke: rgba(244,218,128,.65); }
 .map-marker { cursor: pointer; outline: none; }
+.marker-hit { fill: transparent; pointer-events: all; }
 .marker-halo { fill: rgba(244,201,0,.16); stroke: rgba(244,201,0,.1); stroke-width: 1; transition: fill .2s ease, stroke-width .2s ease; }
 .marker-dot { fill: var(--ink); stroke: var(--yellow); stroke-width: 5; transition: fill .2s ease, stroke-width .2s ease; }
 .map-marker:hover .marker-halo, .map-marker:focus-visible .marker-halo, .map-marker[aria-pressed="true"] .marker-halo { fill: rgba(244,201,0,.3); stroke: var(--yellow); stroke-width: 2; }
@@ -557,4 +559,12 @@ h1 em, h2 em { color: var(--mist); font-family: Georgia, "Times New Roman", seri
   .place-matters-grid article, .place-matters-grid article + article { min-height: 0; padding: 2rem 0; border-right: 0; border-bottom: 1px solid var(--line-dark); }
   .place-matters-grid article:last-child { border-bottom: 0; }
   .place-matters-grid h3 { margin-top: 3rem; }
+}
+
+.map-country-keys { display: none; }
+.map-country-keys button[aria-pressed="true"] { color: var(--ink); background: var(--yellow); border-color: var(--yellow); }
+@media (max-width: 760px) {
+  .map-country-keys { display: flex; flex-wrap: wrap; justify-content: center; gap: .55rem; padding: .9rem .45rem .4rem; }
+  .map-country-keys button { border: 1px solid rgba(244,241,232,.34); border-radius: 2rem; padding: .55rem .75rem; color: var(--paper); background: rgba(255,255,255,.05); font: inherit; font-size: .78rem; cursor: pointer; }
+  .map-country-keys button:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
 }
