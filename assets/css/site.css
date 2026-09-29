@@ -576,3 +576,24 @@ h1 em, h2 em { color: var(--mist); font-family: Georgia, "Times New Roman", seri
 .round-map-four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 1100px) { .round-map-four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 760px) { .round-map-four { grid-template-columns: 1fr; } }
+
+/* Behind the Breath: Power Breathing Deep Dive */
+.journal-list { display: grid; gap: 2rem; }
+.comment-figure { padding: clamp(1.25rem,3vw,2.25rem); border-radius: 1.25rem; background: #111918; }
+.comment-figure img { box-shadow: none; }
+.comment-figure figcaption { color: rgba(255,255,255,.62); }
+.testing-gallery { grid-template-columns: repeat(3,minmax(0,1fr)); align-items: stretch; }
+.testing-gallery figure { display: flex; flex-direction: column; }
+.testing-gallery figcaption { margin-top: auto; }
+.hold-list li { grid-template-columns: 110px 1fr; }
+.banner-figure { padding: clamp(1.25rem,4vw,3rem); border-radius: 1.25rem; background: #071312; }
+.banner-figure img { box-shadow: none; }
+.banner-figure figcaption { color: rgba(255,255,255,.62); }
+
+@media (max-width: 900px) {
+  .testing-gallery { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 580px) {
+  .hold-list li { grid-template-columns: 1fr; }
+}
