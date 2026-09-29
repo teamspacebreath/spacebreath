@@ -6,6 +6,8 @@
 
 - [Home](https://www.space-breath.com/): About SpaceBreath, the creative team and the latest release.
 - [Sessions](https://www.space-breath.com/sessions/): The complete guided breathwork archive.
+- [Journal](https://www.space-breath.com/journal/): Behind the Breath creation stories and production notes.
+- [About](https://www.space-breath.com/about/): The SpaceBreath team and the connected creative process.
 - [Where We Breathe](https://www.space-breath.com/locations/): An atlas of the countries, landscapes and filming locations behind SpaceBreath sessions.
 
 ## Individual session guides
