@@ -113,7 +113,7 @@ const atlasCountries = {
   },
   spain: {
     region: 'Spain · 3 locations',
-    number: '5',
+    number: '6',
     title: 'Atlantic edges and island light',
     copy: 'Sessions made in Camposancos, Mallorca, Galicia and La Guardia, including Spanish-language guidance and creative-flow practices.',
     link: 'View Spain locations'
