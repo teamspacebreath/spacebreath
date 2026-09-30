@@ -233,12 +233,12 @@ h1 em, h2 em { color: var(--mist); font-family: Georgia, "Times New Roman", seri
 .session-detail-page { background: var(--paper); color: var(--ink); }
 .session-detail-page .site-header { background: rgba(7,19,18,.94); }
 .session-detail-page .primary-navigation a[aria-current="page"] { color: var(--yellow); }
-.session-detail-hero { min-height: 88svh; display: grid; grid-template-columns: minmax(0,1.45fr) minmax(280px,.55fr); gap: clamp(3rem,8vw,8rem); align-items: end; padding: 12rem max(1.25rem,calc((100vw - var(--max))/2)) clamp(5rem,9vw,8rem); background: radial-gradient(circle at 80% 24%,rgba(53,169,224,.14),transparent 26%),linear-gradient(135deg,#102522,#071312 72%); color: var(--paper); }
+.session-detail-hero { min-height: auto; display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: clamp(2rem,4vw,4rem); align-items: center; padding: 9rem max(1.25rem,calc((100vw - var(--max))/2)) 3.5rem; background: radial-gradient(circle at 80% 24%,rgba(53,169,224,.14),transparent 26%),linear-gradient(135deg,#102522,#071312 72%); color: var(--paper); }
 .session-detail-heading { max-width: 930px; }
 .breadcrumbs { display: flex; flex-wrap: wrap; gap: .65rem; margin-bottom: 3rem; color: rgba(255,255,255,.55); font-size: .74rem; }
 .breadcrumbs a { text-decoration: none; }
 .breadcrumbs a:hover, .breadcrumbs a:focus-visible { color: var(--yellow); }
-.session-detail-hero h1 { margin-bottom: 1.5rem; font-size: clamp(3.6rem,7.6vw,7.3rem); text-wrap: balance; }
+.session-detail-hero h1 { margin-bottom: 1.25rem; font-size: clamp(2.5rem,4.1vw,4.2rem); text-wrap: balance; overflow-wrap: break-word; }
 .session-detail-deck { max-width: 760px; color: rgba(255,255,255,.72); font-size: clamp(1.08rem,1.8vw,1.4rem); }
 .session-detail-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.4rem; margin-top: 2.25rem; }
 .session-facts { margin: 0; border-top: 1px solid var(--line-dark); }
@@ -617,4 +617,25 @@ h1 em, h2 em { color: var(--mist); font-family: Georgia, "Times New Roman", seri
 
 @media (max-width: 580px) {
   .hold-list li { grid-template-columns: 1fr; }
+}
+
+/* A session is a watch page: keep its player visible in the opening layout. */
+.session-watch-panel { min-width: 0; }
+.session-watch-safety { margin: 0 0 .8rem; color: var(--yellow); font-size: .85rem; }
+.session-watch-safety a { text-underline-offset: .2em; }
+.session-watch-panel .session-video { margin-inline: 0; border-radius: 1rem; scroll-margin-top: 7rem; }
+.session-watch-panel .session-facts { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 1.5rem; margin-top: 1.25rem; }
+.session-watch-panel .session-facts div { display: block; padding: .8rem 0; }
+.session-watch-panel .session-facts dt { margin-bottom: .3rem; }
+.safety-callout h3 { scroll-margin-top: 7rem; }
+@media (max-width: 900px) {
+  .session-detail-hero { gap: 2rem; padding-top: 8rem; }
+  .session-detail-hero .breadcrumbs { margin-bottom: 1.5rem; }
+  .session-detail-hero h1 { font-size: clamp(2.4rem,7vw,3.5rem); }
+  .session-detail-deck { font-size: 1rem; }
+  .session-detail-actions { margin-top: 1.25rem; }
+}
+@media (max-width: 580px) {
+  .session-watch-panel .session-facts { gap: 0 1rem; }
+  .session-watch-panel .session-facts dd { overflow-wrap: break-word; }
 }
