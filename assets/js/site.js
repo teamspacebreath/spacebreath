@@ -261,3 +261,102 @@ document.querySelectorAll('.video-facade').forEach((button) => {
     iframe.focus();
   }, { once: true });
 });
+
+// If a grid ends with a single card on its own row, turn that card into a full-width feature card.
+// Works out the rows arithmetically (so it never feeds back on itself) and re-runs when filters change
+// or the window is resized, so it keeps working as new sessions and locations are added.
+(() => {
+  const grids = [...document.querySelectorAll('.sessions-grid, .location-grid')];
+  if (!grids.length) return;
+  const fill = (grid) => {
+    const items = [...grid.children];
+    const cs = getComputedStyle(grid);
+    const tracks = cs.gridTemplateColumns.split(' ').filter(Boolean).map(parseFloat);
+    const cols = tracks.length;
+    const gap = parseFloat(cs.columnGap) || 0;
+    const visible = items.filter((el) => getComputedStyle(el).display !== 'none');
+    let target = null;
+    if (cols >= 2 && visible.length >= 2) {
+      const spanOf = (el) => { if (el.classList.contains('is-fill')) return 1; const m = /span (\d+)/.exec(getComputedStyle(el).gridColumnEnd); return m ? +m[1] : 1; };
+      let pos = 0, lastStartsRow = false;
+      visible.forEach((el, i) => {
+        const s = Math.min(spanOf(el), cols);
+        if (pos + s > cols) pos = 0;
+        if (i === visible.length - 1) lastStartsRow = pos === 0;
+        pos = (pos + s) % cols;
+      });
+      const last = visible[visible.length - 1];
+      if (lastStartsRow && spanOf(last) < cols) target = last;
+    }
+    items.forEach((el) => { const want = el === target; if (el.classList.contains('is-fill') !== want) el.classList.toggle('is-fill', want); });
+  };
+  const run = () => grids.forEach(fill);
+  let t;
+  const schedule = () => { clearTimeout(t); t = setTimeout(run, 60); };
+  window.addEventListener('resize', schedule);
+  grids.forEach((g) => new MutationObserver((muts) => {
+    if (muts.some((m) => !(m.attributeName === 'class' && m.target.classList.contains('is-fill') !== m.oldValue?.includes('is-fill')))) schedule();
+  }).observe(g, { attributes: true, subtree: true, attributeFilter: ['class', 'hidden'], attributeOldValue: true }));
+  run();
+})();
+
+// Keep a single word from sitting alone on the last line of headings and short text.
+// Measures on the real screen: joins the last two words only when they fit, and re-checks on resize.
+(() => {
+  const SEL = 'h1, h2, h3, h4, .article-deck, .session-intention-lead, .text-link, .location-card-copy > p, .process-card p, .intro-copy p';
+  const NB = ' ';
+  const lastWords = (el) => {
+    const nodes = [];
+    const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    let n;
+    while ((n = w.nextNode())) nodes.push(n);
+    // find the last two word boundaries across text nodes, stopping at a <br>
+    for (let i = nodes.length - 1; i >= 0; i--) {
+      const node = nodes[i];
+      const text = node.data.replace(/\s+$/, '');
+      const idx = Math.max(text.lastIndexOf(' '), text.lastIndexOf(NB));
+      if (idx > 0) return { node, idx, isNb: text[idx] === NB };
+      if (text.trim()) {
+        // last word starts at the beginning of this node; the gap is at the end of a previous node
+        let prev = node.previousSibling || node.parentNode.previousSibling;
+        if (prev && prev.nodeName === 'BR') return null;
+        for (let j = i - 1; j >= 0; j--) {
+          const d = nodes[j].data;
+          if (/[  ]$/.test(d)) return { node: nodes[j], idx: d.length - 1, isNb: d.endsWith(NB) };
+          if (d.trim()) return null;
+        }
+        return null;
+      }
+    }
+    return null;
+  };
+  const top = (node, i) => { const r = document.createRange(); r.setStart(node, i); r.setEnd(node, i + 1); const rects = r.getClientRects(); return rects.length ? rects[0].top : null; };
+  const fix = (el) => {
+    if (el.dataset.nbJoined) { // undo previous join before re-measuring
+      const s = JSON.parse(el.dataset.nbJoined); delete el.dataset.nbJoined;
+      const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); let k = 0, n;
+      while ((n = w.nextNode())) { if (k++ === s.k) { n.data = n.data.slice(0, s.i) + ' ' + n.data.slice(s.i + 1); break; } }
+    }
+    const lw = lastWords(el);
+    if (!lw || lw.isNb) return;
+    const node = lw.node, i = lw.idx;
+    const before = top(node, Math.max(0, i - 1)), after = top(node, i + 1 <= node.data.length - 1 ? i + 1 : i);
+    // last word on its own line? (compare the char before the gap with the end of the element)
+    const endR = document.createRange(); endR.selectNodeContents(el); const rects = endR.getClientRects();
+    if (!rects.length || before === null) return;
+    const lastTop = rects[rects.length - 1].top;
+    if (Math.abs(lastTop - before) < 4) return; // already on the same line
+    const original = node.data;
+    const wBefore = el.getBoundingClientRect().width;
+    const docBefore = document.documentElement.scrollWidth;
+    node.data = original.slice(0, i) + NB + original.slice(i + 1);
+    if (el.scrollWidth > el.clientWidth + 1 || el.getBoundingClientRect().width > wBefore + 1 || document.documentElement.scrollWidth > docBefore) { node.data = original; return; }
+    const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); let k = 0, n;
+    while ((n = w.nextNode())) { if (n === node) break; k++; }
+    el.dataset.nbJoined = JSON.stringify({ k, i });
+  };
+  const run = () => document.querySelectorAll(SEL).forEach((el) => { if (el.offsetParent !== null) fix(el); });
+  let t;
+  window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(run, 150); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(run); else window.addEventListener('load', run);
+})();

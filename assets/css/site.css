@@ -694,3 +694,109 @@ h1 em, h2 em { color: var(--mist); font-family: Georgia, "Times New Roman", seri
 .video-facade-fallback { display: flex; align-items: center; justify-content: center; height: 100%; color: var(--yellow); }
 @media (max-width: 760px) { .video-facade-play { width: 64px; height: 64px; margin: -32px 0 0 -32px; } .video-facade-play::after { border-width: 11px 0 11px 17px; } .video-facade-note { font-size: .65rem; } }
 .video-facade-plain { background: radial-gradient(circle at 70% 30%, rgba(53,169,224,.18), transparent 45%), linear-gradient(135deg,#102522,#071312); } .video-facade-title { position: absolute; top: 1.2rem; left: 1.2rem; right: 1.2rem; font-size: clamp(1rem,2.2vw,1.4rem); font-weight: 700; text-align: left; }
+
+/* ===== Layout polish (Oct 2026) ===== */
+/* Avoid single words on their own line */
+h1, h2, h3, h4, .article-deck, .eyebrow, dd, dt, figcaption, .location-slide strong, .button { text-wrap: balance; }
+p, li, blockquote { text-wrap: pretty; }
+
+/* Session safety box: keep the guide link under the text, not under the heading */
+@media (min-width: 581px) { .safety-callout > .safety-guide-link { grid-column: 2; } }
+
+/* Four-round sessions: one row of four (two on tablets) instead of three plus one */
+.round-map:has(> :nth-child(4):last-child) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1100px) { .round-map:has(> :nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 900px) { .round-map:has(> :nth-child(4):last-child) { grid-template-columns: 1fr; } }
+
+/* Show whole session covers on the Locations page (wide cards cropped the titles) */
+.location-card-wide img { aspect-ratio: 16/9; }
+
+/* A card left alone on the last row becomes a full-width feature card */
+.session-card.is-fill, .location-card.is-fill { grid-column: 1 / -1; flex-direction: row; }
+.session-card.is-fill .session-card-image { flex: 0 0 56%; }
+.session-card.is-fill .session-card-copy { justify-content: center; padding: clamp(1.6rem, 3vw, 2.6rem); }
+.location-card.is-fill { min-height: 0; }
+.location-card.is-fill > img, .location-card.is-fill > .location-carousel { flex: 0 0 58%; min-width: 0; }
+.location-card.is-fill .location-card-copy { justify-content: center; }
+.location-card.is-fill .location-card-copy a { margin-top: .5rem; }
+
+/* Filter chips: scroll sideways on tablets too, instead of leaving one chip on its own row */
+@media (max-width: 1100px) {
+  .session-filters, .location-filters { flex-wrap: nowrap; margin-right: -1.25rem; padding-right: 1.25rem; overflow-x: auto; scrollbar-width: none; }
+  .session-filters::-webkit-scrollbar, .location-filters::-webkit-scrollbar { display: none; }
+  .session-filters > *, .location-filters > * { flex: 0 0 auto; }
+}
+
+/* Safety guide contents: tidy 3 x 3 grid, side-scrolling strip on phones */
+.safety-contents { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .55rem; }
+.safety-contents a { text-align: center; }
+@media (max-width: 760px) {
+  .safety-contents { display: flex; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-right: -1.25rem; padding-right: 1.25rem; }
+  .safety-contents::-webkit-scrollbar { display: none; }
+  .safety-contents a { flex: 0 0 auto; }
+}
+
+/* Map country buttons on phones: 4 + 3 instead of 3 + 3 + 1 */
+@media (max-width: 760px) {
+  .map-country-keys { display: grid; grid-template-columns: repeat(4, auto); justify-content: center; }
+}
+@media (max-width: 380px) { .map-country-keys { grid-template-columns: repeat(3, auto); } }
+
+/* Footer: stack neatly before the copyright line starts wrapping */
+@media (max-width: 1000px) {
+  .site-footer { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 1.25rem; }
+  .site-footer p:last-child { justify-self: center; }
+}
+
+/* Article meta (blog posts): one item per line on smaller screens */
+@media (max-width: 900px) { .article-meta { flex-direction: column; gap: .6rem; } }
+
+@media (max-width: 760px) {
+  .session-card.is-fill, .location-card.is-fill { flex-direction: column; }
+  .session-card.is-fill .session-card-image, .location-card.is-fill > img, .location-card.is-fill > .location-carousel { flex: none; }
+}
+/* Safety net: grid columns never grow wider than the screen; very long words wrap instead of overflowing */
+.session-content-grid > *, .session-at-a-glance > *, .session-audience-heading > *, .session-answers-heading > * { min-width: 0; }
+.process-role { display: block; margin-top: .35rem; color: #7f6900; font-size: .72rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+/* About page team cards: the later 4-column rule was overriding the tablet/phone layouts */
+.about-page-links .process-card { text-decoration: none; color: inherit; }
+.about-page-links .process-card h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+@media (max-width: 1000px) { .about-page-links { grid-template-columns: repeat(2, minmax(0, 1fr)); } .about-page-links .process-card { min-height: 0; } }
+@media (max-width: 580px) { .about-page-links { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .news-grid { grid-template-columns: 1fr; } }
+/* Locations closing section: heading was cream on pale mint (unreadable) */
+.location-cta h2 { color: var(--ink); }
+.location-cta h2 em { color: #4d6b62; }
+.location-cta .eyebrow { color: #7f6900; }
+
+/* Readability: labels and italic heading lines on light backgrounds (yellow/sage were too faint) */
+.session-player-section .eyebrow, .music-story .eyebrow, .transcript-section .eyebrow, .related-practices .eyebrow,
+.session-audience .eyebrow, .session-content-grid .eyebrow, .session-credits .eyebrow, .session-answers .eyebrow,
+.session-at-a-glance .eyebrow, .sessions-library .eyebrow, .library-heading .eyebrow, .location-cta .eyebrow,
+.process .eyebrow, .journal .eyebrow, .about .eyebrow, .location-stories .eyebrow, .safety-callout .eyebrow,
+.session-kicker, .process-index { color: #6b5800; }
+.process h2 em, .journal h2 em, .about h2 em, .music-story h2 em, .location-cta h2 em { color: #4d6b62; }
+/* Blog: label inside the dark closing box was dark-on-dark */
+.article-cta .eyebrow { color: var(--yellow); }
+.journal .news-card .eyebrow { color: var(--yellow); }
+.nw { white-space: nowrap; }
+/* Safety guide: session links as pills, so names never break awkwardly */
+.safety-guide .safety-links { display: flex; flex-wrap: wrap; gap: .5rem; font-family: Inter, Arial, sans-serif; }
+.safety-guide .safety-links a { margin: 0; padding: .5rem .9rem; border: 1px solid var(--line-light); border-radius: 999px; color: var(--ink); font-size: .82rem; line-height: 1.3; text-decoration: none; white-space: nowrap; }
+.safety-guide .safety-links a:hover, .safety-guide .safety-links a:focus-visible { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+/* Locations: session caption sits under the cover instead of on top of the cover's own title text */
+.location-slide::after { display: none; }
+.location-slide > span { position: static; display: grid; gap: .2rem; padding: .85rem 1.25rem 1rem; background: var(--ink); text-shadow: none; }
+.location-slide strong { font-size: clamp(1rem, 1.6vw, 1.35rem); line-height: 1.15; }
+.location-slide em { color: rgba(255,255,255,.7); }
+.location-card.is-fill .location-slide strong { font-size: clamp(1rem, 1.4vw, 1.25rem); }
+/* Locations: equal-sized cards (whole covers, no empty gaps next to wide cards) */
+.location-card-wide { grid-column: auto; }
+.location-card { min-height: 0; }
+/* Footer: support link stands out gently */
+.footer-social .footer-support { padding: .15rem .7rem; border: 1px solid rgba(244,201,0,.55); border-radius: 999px; color: var(--yellow); }
+.footer-social .footer-support:hover, .footer-social .footer-support:focus-visible { background: var(--yellow); color: var(--ink); }
+.contact-follow { margin-top: 1.5rem; max-width: 540px; color: rgba(255,255,255,.66); font-size: .92rem; }
+.contact-follow a, .about-support a { color: var(--yellow); }
+.about-support { margin-top: 2rem; max-width: 560px; color: rgba(255,255,255,.66); font-size: .9rem; }
+.next-session-cta .button + .text-link { margin-left: 1.25rem; }
