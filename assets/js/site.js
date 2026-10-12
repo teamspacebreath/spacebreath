@@ -247,3 +247,17 @@ document.querySelectorAll('[data-location-carousel]').forEach((carousel) => {
 
   showSlide(0);
 });
+
+// Click-to-load YouTube player: nothing loads from YouTube until the visitor presses play.
+document.querySelectorAll('.video-facade').forEach((button) => {
+  button.addEventListener('click', () => {
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${button.dataset.videoId}?rel=0&autoplay=1`;
+    iframe.title = button.dataset.videoTitle || 'SpaceBreath session video';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    iframe.allowFullscreen = true;
+    button.replaceWith(iframe);
+    iframe.focus();
+  }, { once: true });
+});

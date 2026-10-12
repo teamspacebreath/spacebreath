@@ -58,13 +58,13 @@
     "inLanguage": "en-GB"
   }
   </script>
-  <link rel="stylesheet" href="/assets/css/site.css?v=20260930-1">
-  <script src="/assets/js/site.js?v=20260915-4" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=20261012-1">
+  <script src="/assets/js/site.js?v=20261012-1" defer></script>
 </head>
 <body class="blog-page">
   <a class="skip-link" href="#article">Skip to article</a>
   <header class="site-header scrolled" data-header>
-    <a class="brand" href="/" aria-label="SpaceBreath home"><img src="/images/logo-v3-transparent.png" alt="SpaceBreath"></a>
+    <a class="brand" href="/" aria-label="SpaceBreath home"><img src="/images/logo-v3-transparent.webp" width="600" height="256" decoding="async" alt="SpaceBreath"></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle><span></span><span></span><span></span><span class="sr-only">Open menu</span></button>
     <nav id="primary-navigation" class="primary-navigation" aria-label="Primary navigation" data-menu>
       <a href="/sessions/">Sessions</a><a href="/locations/">Locations</a>
@@ -88,7 +88,7 @@
       </header>
 
       <figure class="article-cover reveal">
-        <img src="/images/release-tension.jpg" alt="Release Tension and Thoughts SpaceBreath video cover featuring Jonas beside a coastal landscape">
+        <img src="/images/release-tension.webp" srcset="/images/release-tension-640.webp 640w, /images/release-tension.webp 1280w" sizes="(max-width: 760px) 100vw, 640px" width="1280" height="720" decoding="async" alt="Release Tension and Thoughts SpaceBreath video cover featuring Jonas beside a coastal landscape">
       </figure>
 
       <div class="article-body">
@@ -110,7 +110,7 @@
         <p>Rather than simply playing behind the guidance, the music was designed to breathe alongside it.</p>
 
         <figure class="article-figure wide">
-          <img src="/images/SB_034_Release_Tension.png" alt="Logic Pro arrangement showing the music, recorded guidance and precisely timed breathing patterns for Release Thoughts and Tension">
+          <img src="/images/SB_034_Release_Tension.webp" srcset="/images/SB_034_Release_Tension-640.webp 640w, /images/SB_034_Release_Tension.webp 1600w" sizes="(max-width: 760px) 100vw, 640px" width="1600" height="775" decoding="async" alt="Logic Pro arrangement showing the music, recorded guidance and precisely timed breathing patterns for Release Thoughts and Tension">
           <figcaption>The Logic Pro arrangement, with the musical layers above and guidance and breathing cues mapped beneath.</figcaption>
         </figure>
 
@@ -127,11 +127,11 @@
 
         <div class="feedback-gallery" role="group" aria-label="Messages exchanged while creating the session">
           <figure>
-            <img src="/images/jonas-feedback-1.jpg" alt="Messages from Jonas saying he loved the first round, found it calming and felt the subtle breathing cues worked well with the music" loading="lazy">
+            <img src="/images/jonas-feedback-1.webp" srcset="/images/jonas-feedback-1-640.webp 640w, /images/jonas-feedback-1.webp 1125w" sizes="(max-width: 760px) 100vw, 640px" width="1125" height="1026" decoding="async" alt="Messages from Jonas saying he loved the first round, found it calming and felt the subtle breathing cues worked well with the music" loading="lazy">
             <figcaption>Jonas’s first response after trying the revised round.</figcaption>
           </figure>
           <figure>
-            <img src="/images/jonas-feedback-2.jpg" alt="A short message exchange celebrating that the calmer version was working" loading="lazy">
+            <img src="/images/jonas-feedback-2.webp" srcset="/images/jonas-feedback-2-640.webp 640w, /images/jonas-feedback-2.webp 1125w" sizes="(max-width: 760px) 100vw, 640px" width="1125" height="493" decoding="async" alt="A short message exchange celebrating that the calmer version was working" loading="lazy">
             <figcaption>The moment we knew the session had found its feeling.</figcaption>
           </figure>
         </div>
@@ -150,12 +150,21 @@
         </section>
       </div>
     </article>
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <div class="newsletter-copy reveal"><p class="eyebrow">Email updates</p><h2 id="newsletter-title">Never miss<br><em>a session.</em></h2><p>A short note every other Tuesday when a new guided breathwork session is released. No spam, unsubscribe any time.</p></div>
+      <form class="newsletter-form reveal" action="https://app.kit.com/forms/10036904/subscriptions" method="post">
+        <input type="hidden" name="fields[language]" value="en">
+        <label class="sr-only" for="newsletter-email">Email address</label>
+        <div class="newsletter-row"><input id="newsletter-email" name="email_address" type="email" autocomplete="email" placeholder="Your email address" required><button class="button button-primary" type="submit">Subscribe</button></div>
+        <p class="newsletter-note">By subscribing you agree to receive these emails. See our <a href="/privacy/">privacy policy</a>.</p>
+      </form>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <a class="footer-brand" href="/"><img src="/images/logo-v3-transparent.png" alt="SpaceBreath"></a>
+    <a class="footer-brand" href="/"><img src="/images/logo-v3-transparent.webp" width="600" height="256" decoding="async" alt="SpaceBreath"></a>
     <p class="footer-social"><a href="https://www.youtube.com/@Space-Breath" target="_blank" rel="noopener">YouTube</a><a href="https://www.instagram.com/space__breath/" target="_blank" rel="noopener">Instagram</a><a href="https://www.patreon.com/SpaceBreath" target="_blank" rel="noopener">Patreon</a></p>
-    <p>© 2026 SpaceBreath</p>
+    <p class="footer-legal">© 2026 SpaceBreath · <a href="/safety/">Safety</a> · <a href="/privacy/">Privacy</a></p>
   </footer>
 </body>
 </html>
