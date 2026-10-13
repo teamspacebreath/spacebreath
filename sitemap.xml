@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.space-breath.com/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-13</lastmod>
   </url>
   <url>
     <loc>https://www.space-breath.com/sessions/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-13</lastmod>
   </url>
   <url>
     <loc>https://www.space-breath.com/locations/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-13</lastmod>
   </url>
   <url>
     <loc>https://www.space-breath.com/sessions/release-thoughts-and-tension/</loc>
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://www.space-breath.com/sessions/coherent-breathing-nervous-system-reset/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-13</lastmod>
   </url>
   <url>
     <loc>https://www.space-breath.com/sessions/rhythmic-breathing-for-energy/</loc>
@@ -183,5 +183,9 @@
   <url>
     <loc>https://www.space-breath.com/safety/</loc>
     <lastmod>2026-10-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.space-breath.com/sessions/coherent-breathing-extended/</loc>
+    <lastmod>2026-10-13</lastmod>
   </url>
 </urlset>
