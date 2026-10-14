@@ -820,3 +820,44 @@ p, li, blockquote { text-wrap: pretty; }
   .primary-navigation .nav-heart { display: inline-flex; gap: .6rem; width: auto; height: auto; margin-left: 0; padding: .75rem 1.3rem; border-radius: 999px; color: var(--ink); }
   .nav-heart-label { position: static; width: auto; height: auto; clip: auto; }
 }
+
+/* ---- Guide articles (Breathwork basics) ---- */
+.article-body h3 { margin: 3rem 0 1rem; color: var(--ink); font-size: clamp(1.35rem,2.4vw,1.8rem); line-height: 1.2; letter-spacing: -.03em; }
+.article-body p a, .article-body li a, .article-body figcaption a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--yellow); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.article-body p a:hover, .article-body li a:hover { text-decoration-color: var(--ink); }
+.article-video { margin: 3.5rem 0 4rem; }
+.article-video .session-video { margin-inline: 0; border-radius: 1rem; }
+.article-video figcaption { margin-top: .9rem; color: rgba(7,19,18,.68); font-size: .85rem; }
+.article-steps { counter-reset: step; list-style: none; margin: 2rem 0 2.5rem; padding: 0; border-top: 1px solid var(--line-light); }
+.article-steps li { counter-increment: step; position: relative; padding: 1.1rem 0 1.1rem 3.4rem; border-bottom: 1px solid var(--line-light); color: rgba(7,19,18,.77); font-family: Georgia, "Times New Roman", serif; font-size: 1.08rem; line-height: 1.7; }
+.article-steps li::before { content: counter(step, decimal-leading-zero); position: absolute; left: 0; top: 1.15rem; color: #6b5800; font-family: Inter, Arial, sans-serif; font-weight: 800; font-size: 1.05rem; letter-spacing: .02em; }
+.article-steps strong { color: var(--ink); font-family: Inter, Arial, sans-serif; font-size: 1rem; }
+.article-session-links { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; margin: 2.5rem 0 2rem; }
+.article-session-links .related-practice-card { min-width: 0; }
+.article-interview { margin: 2rem 0 0; border-top: 1px solid var(--line-light); }
+.article-interview h3 { margin: 2rem 0 .6rem; font-size: 1.05rem; letter-spacing: -.01em; }
+.article-interview p { margin-bottom: 1.8rem; padding-bottom: 1.8rem; border-bottom: 1px solid var(--line-light); color: var(--ink); font-style: italic; }
+.article-safety { margin: 5rem 0; padding: clamp(2rem,5vw,3.5rem); border-radius: var(--radius); background: #dce5e0; }
+.article-safety h2 { margin-top: .4rem; font-size: clamp(2rem,4vw,3rem); }
+.article-safety .eyebrow { color: #6b5800; }
+.article-safety .article-bullets { margin-bottom: 1.2rem; }
+.article-safety .safety-guide-link { margin: 0; font-family: Inter, Arial, sans-serif; font-weight: 700; font-size: .95rem; }
+.article-faq { border-top: 1px solid var(--line-light); }
+.article-faq > div { padding: 1.6rem 0 .2rem; border-bottom: 1px solid var(--line-light); }
+.article-faq h3 { margin: 0 0 .7rem; font-size: clamp(1.1rem,2vw,1.35rem); }
+.article-cta p a { color: var(--paper); text-decoration-color: var(--yellow); }
+.article-cta h2 em { color: var(--mist); }
+@media (max-width: 860px) { .article-session-links { grid-template-columns: 1fr; } }
+.article-bullets { margin: 1.5rem 0 2rem; padding: 0; list-style: none; }
+.article-bullets li { position: relative; padding: .7rem 0 .7rem 1.6rem; color: rgba(7,19,18,.77); font-family: Georgia, "Times New Roman", serif; font-size: 1.08rem; line-height: 1.75; }
+.article-bullets li::before { content: ""; position: absolute; left: 0; top: 1.45rem; width: .5rem; height: .5rem; border-radius: 50%; background: var(--yellow); }
+.article-body .eyebrow { margin: 0 0 1rem; font-family: Inter, Arial, sans-serif; font-size: .72rem; font-weight: 800; line-height: 1.4; letter-spacing: .2em; text-transform: uppercase; }
+@media (max-width: 860px) { .article-session-links .related-practice-card { min-height: 0; } .article-session-links .related-practice-card strong { margin-top: 1.5rem; } }
+.article-video-quote { display: block; margin: .4rem 0 .9rem; padding-left: 1.1rem; border-left: 3px solid var(--yellow); color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.2rem,2.2vw,1.5rem); font-style: italic; line-height: 1.45; }
+.article-video-quote cite { display: block; margin-top: .45rem; color: rgba(7,19,18,.68); font-family: Inter, Arial, sans-serif; font-size: .68rem; font-style: normal; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.article-sources { margin: 5rem 0 0; padding-top: 2rem; border-top: 1px solid var(--line-light); scroll-margin-top: 7rem; }
+.article-sources h2 { margin: 0 0 1.2rem; font-size: clamp(1.5rem,2.6vw,2rem); letter-spacing: -.03em; }
+.article-sources ol { margin: 0; padding-left: 1.3rem; }
+.article-sources li { margin-bottom: .8rem; color: rgba(7,19,18,.72); font-family: Inter, Arial, sans-serif; font-size: .88rem; line-height: 1.6; }
+.article-sources li a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--yellow); text-underline-offset: 3px; }
+.article-meta a[href="#sources"] { color: inherit; }
