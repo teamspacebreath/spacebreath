@@ -861,3 +861,4 @@ p, li, blockquote { text-wrap: pretty; }
 .article-sources li { margin-bottom: .8rem; color: rgba(7,19,18,.72); font-family: Inter, Arial, sans-serif; font-size: .88rem; line-height: 1.6; }
 .article-sources li a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--yellow); text-underline-offset: 3px; }
 .article-meta a[href="#sources"] { color: inherit; }
+.journal-card { grid-template-columns: minmax(0,1.25fr) minmax(0,.75fr); } .journal-copy h3 { overflow-wrap: normal; } @media (max-width: 900px) { .journal-card { grid-template-columns: minmax(0,1fr); } }
