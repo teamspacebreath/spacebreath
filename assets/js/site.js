@@ -106,16 +106,16 @@ const atlasLink = document.querySelector('[data-atlas-link]');
 const atlasCountries = {
   all: {
     region: 'Our evolving atlas',
-    number: '15',
+    number: '14',
     title: 'Landscapes shaped by the breath',
     copy: 'From Patagonia to Pù Luông, each setting brings its own pace and presence to the practice.',
     link: 'Explore every location'
   },
   spain: {
-    region: 'Spain · 3 locations',
-    number: '6',
+    region: 'Spain · 2 locations',
+    number: '8',
     title: 'Atlantic edges and island light',
-    copy: 'Sessions made in Camposancos, Mallorca, Galicia and La Guardia, including Spanish-language guidance and creative-flow practices.',
+    copy: 'Sessions made on the Galician coast at A Guarda and Camposancos, and in Mallorca, including Spanish-language guidance, coherent breathing and psychedelic breathing.',
     link: 'View Spain locations'
   },
   germany: {

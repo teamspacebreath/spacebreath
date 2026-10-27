@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.space-breath.com/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-27</lastmod>
   </url>
   <url>
     <loc>https://www.space-breath.com/sessions/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-27</lastmod>
   </url>
   <url>
     <loc>https://www.space-breath.com/locations/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-27</lastmod>
   </url>
   <url>
     <loc>https://www.space-breath.com/sessions/release-thoughts-and-tension/</loc>
@@ -191,5 +191,9 @@
   <url>
     <loc>https://www.space-breath.com/blog/what-is-coherent-breathing/</loc>
     <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://www.space-breath.com/sessions/psychedelic-breathing-subconscious/</loc>
+    <lastmod>2026-10-27</lastmod>
   </url>
 </urlset>
