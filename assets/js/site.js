@@ -113,9 +113,9 @@ const atlasCountries = {
   },
   spain: {
     region: 'Spain · 2 locations',
-    number: '8',
+    number: '10',
     title: 'Atlantic edges and island light',
-    copy: 'Sessions made on the Galician coast at A Guarda and Camposancos, and in Mallorca, including Spanish-language guidance, coherent breathing and psychedelic breathing.',
+    copy: 'Sessions made on the Galician coast at A Guarda and Camposancos, and in Mallorca, including Spanish-language guidance, 4-7-8 sleep breathing, coherent breathing and psychedelic breathing.',
     link: 'View Spain locations'
   },
   germany: {
